@@ -1,3 +1,6 @@
+# FAQ of PFPVerification
+See FAQ [here](https://github.com/ForeverPFP/pfp-verification-contract/blob/main/faq.md)
+
 # How to run the project
 Install [foundry](https://book.getfoundry.sh/)
 
