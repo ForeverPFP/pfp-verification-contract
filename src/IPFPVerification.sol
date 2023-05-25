@@ -33,4 +33,9 @@ interface IPFPVerification {
      * @param contract_ The collection address of the PFP
      */
     function isVerified(address contract_) external view returns (bool);
+
+    /**
+     * @notice Returns all the PFP collections addresses.
+     */
+    function getVerifiedCollections() external view returns (address[] memory);
 }

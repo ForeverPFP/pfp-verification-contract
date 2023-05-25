@@ -13,14 +13,19 @@ contract PFPVerificationTest is Test {
 
     PFPVerification public pv;
     TestPFP public testPFP;
+    TestPFP public testPFP1;
     address public testPFPAddress;
+    address public testPFPAddress1;
     address[] public pfpAddresses;
 
     function setUp() public {
         pv = new PFPVerification();
         testPFP = new TestPFP("Test PFP", "TPFP");
+        testPFP1 = new TestPFP("Test PFP1", "TPFP1");
         testPFPAddress = address(testPFP);
+        testPFPAddress1 = address(testPFP1);
         pfpAddresses.push(testPFPAddress);
+        pfpAddresses.push(testPFPAddress1);
     }
 
     function testAddVerification() public {
@@ -39,5 +44,15 @@ contract PFPVerificationTest is Test {
         emit VerificationRemoved(testPFPAddress);
         pv.removeVerification(pfpAddresses);
         assertFalse(pv.isVerified(testPFPAddress));
+    }
+
+    function testGetVerifiedCollections() public {
+        pv.addVerification(pfpAddresses);
+        address[] memory verified = pv.getVerifiedCollections();
+        assertEq(verified.length, 2);
+        pfpAddresses.pop();
+        pv.removeVerification(pfpAddresses);
+        address[] memory verifiedAfterRemove = pv.getVerifiedCollections();
+        assertEq(verifiedAfterRemove.length, 1);
     }
 }

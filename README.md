@@ -41,7 +41,7 @@ forge create --rpc-url {rpc_url} \
 
 | Name | address |
 | --- | --- |
-| PFPVerification | [0x7a9c9c192c3F56F240f798c2D22D1b7cf2bc5bC1](https://goerli.etherscan.io/address/0x7a9c9c192c3F56F240f798c2D22D1b7cf2bc5bC1) |
+| PFPVerification | [0x036F0d017f5D11080Dc426De30A455687C9bEf3a](https://goerli.etherscan.io/address/0x036F0d017f5D11080Dc426De30A455687C9bEf3a) |
 
 ## Goerli Testnet PFP Collection Address
 
